@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>حراس السطور</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;500;600;700;800&family=Tajawal:wght@400;500;700&family=Lateef&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="ledger-bg" aria-hidden="true"></div>
+
+<!-- ============ GATE ============ -->
+<section id="gate" class="gate">
+  <div class="gate-wall">
+    <h1 class="gate-title">المداد</h1>
+    <p class="gate-subtitle">حرّاس السطور</p>
+
+    <div class="doorway">
+      <div class="door door-left">
+        <div class="door-band band-top"></div>
+        <div class="door-band band-mid"></div>
+        <div class="door-band band-bot"></div>
+      </div>
+      <div class="door door-right">
+        <div class="door-band band-top"></div>
+        <div class="door-band band-mid"></div>
+        <div class="door-band band-bot"></div>
+      </div>
+      <div class="door-ring" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="40" height="40">
+          <circle cx="20" cy="20" r="14" fill="none" stroke="#caa24a" stroke-width="4"/>
+        </svg>
+      </div>
+    </div>
+
+    <form id="gateForm" class="gate-form" autocomplete="off">
+      <input type="password" id="gatePassword" class="gate-input" placeholder="كلمة السر" autocomplete="off">
+      <button type="submit" class="gate-btn">افتح الباب</button>
+      <p class="gate-msg" id="gateMsg"></p>
+    </form>
+  </div>
+</section>
+
+<!-- ============ READER ============ -->
+<div id="reader" class="reader hidden">
+
+  <header class="reader-head">
+    <button id="btnToc" class="icon-btn" aria-label="الفهرس">☰</button>
+    <div class="reader-head-title">
+      <span class="rh-book">حرّاس السطور</span>
+      <span class="rh-series">المداد</span>
+    </div>
+    <button id="btnSettings" class="icon-btn" aria-label="إعدادات القراءة">Aa</button>
+  </header>
+
+  <!-- TOC drawer -->
+  <nav id="tocDrawer" class="drawer">
+    <div class="drawer-head">
+      <span>الفهرس</span>
+      <button id="btnTocClose" class="icon-btn">✕</button>
+    </div>
+    <div id="tocList" class="toc-list"></div>
+  </nav>
+
+  <!-- settings drawer -->
+  <aside id="settingsDrawer" class="drawer drawer-left">
+    <div class="drawer-head">
+      <span>إعدادات القراءة</span>
+      <button id="btnSettingsClose" class="icon-btn">✕</button>
+    </div>
+    <div class="settings-body">
+      <p class="settings-label">الخط</p>
+      <div class="font-options" id="fontOptions">
+        <button data-font="amiri" class="font-opt" style="font-family:'Amiri',serif">أميري</button>
+        <button data-font="cairo" class="font-opt" style="font-family:'Cairo',sans-serif">القاهرة</button>
+        <button data-font="arefruqaa" class="font-opt" style="font-family:'Aref Ruqaa',serif">عارف رقعة</button>
+        <button data-font="tajawal" class="font-opt" style="font-family:'Tajawal',sans-serif">تجوال</button>
+        <button data-font="lateef" class="font-opt" style="font-family:'Lateef',serif">لطيف</button>
+      </div>
+
+      <p class="settings-label">حجم الخط</p>
+      <div class="size-row">
+        <button id="sizeDown" class="icon-btn">−</button>
+        <span id="sizeVal">18</span>
+        <button id="sizeUp" class="icon-btn">+</button>
+      </div>
+
+      <p class="settings-label">لون النص</p>
+      <div class="color-options" id="colorOptions">
+        <button data-color="#16233d" class="color-opt" style="background:#16233d"></button>
+        <button data-color="#3a2a18" class="color-opt" style="background:#3a2a18"></button>
+        <button data-color="#4a1f1f" class="color-opt" style="background:#4a1f1f"></button>
+        <button data-color="#1f3d2e" class="color-opt" style="background:#1f3d2e"></button>
+        <input type="color" id="colorCustom" class="color-custom" value="#16233d" aria-label="لون مخصص">
+      </div>
+
+      <p class="settings-label">خلفية الصفحة</p>
+      <div class="theme-options" id="themeOptions">
+        <button data-theme="paper" class="theme-opt theme-paper">ورقي</button>
+        <button data-theme="sepia" class="theme-opt theme-sepia">سيبيا</button>
+        <button data-theme="night" class="theme-opt theme-night">ليلي</button>
+      </div>
+    </div>
+  </aside>
+  <div id="drawerOverlay" class="drawer-overlay hidden"></div>
+
+  <main id="chapterView" class="chapter-view">
+    <!-- filled by JS -->
+  </main>
+
+  <nav class="chapter-nav">
+    <button id="btnPrev" class="nav-btn">الفصل السابق</button>
+    <button id="btnNext" class="nav-btn">الفصل التالي</button>
+  </nav>
+
+</div>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
