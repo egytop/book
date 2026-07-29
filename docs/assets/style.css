@@ -158,6 +158,13 @@ input{font-family:inherit;}
   margin:10px 0 0;
   font-weight:600;
 }
+.gate-credit{
+  margin-top:22px;
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:#a5824a;
+  letter-spacing:.02em;
+}
 
 .gate.unlocked{
   animation:gateFade .6s ease .55s forwards;
